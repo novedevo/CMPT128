@@ -9,8 +9,9 @@ using namespace std;
 
 pair <double, double> solveQuadratic(double a, double b, double c)
 {
-    if (a==0){
-        return make_pair((((-1)*c)/a),(nan));
+    if (a==0.0){
+        cout<<"test";
+        return make_pair((((-1)*c)/a),(nan("")));
     }
     else{
     double ans1 = ((-1)*b + sqrt(b*b-4*a*c))  /  (2*a);
@@ -75,4 +76,5 @@ int main()
     
     return 0;
 }
+
 
