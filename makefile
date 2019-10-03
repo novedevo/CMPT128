@@ -1,2 +1,2 @@
-program: src/nibbler.cpp
-	g++ src/nibbler.cpp -o CMPT128 -lm
+program: src/activity04.cpp
+	g++ src/activity04.cpp -o CMPT128 -lm
