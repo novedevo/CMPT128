@@ -1,2 +1,2 @@
 program: nibbler.cpp
-	g++ nibbler.cpp -o CMPT128 -lm
+	g++ src/nibbler.cpp -o CMPT128 -lm
