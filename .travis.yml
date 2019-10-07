@@ -1,4 +1,4 @@
 sudo: false
 language: cpp
 compiler: gcc
-script: make nibbler && make activity04 && make codewrite4 && make circlemath
+script: make nibbler && make activity04 && make codewrite4 && make circlemath && make factorial
