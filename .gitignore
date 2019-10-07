@@ -32,3 +32,5 @@
 *.app
 src/tempCodeRunnerFile.cpp
 src/.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
