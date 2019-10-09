@@ -14,11 +14,30 @@ const int BOUNDARY2000 = 2000;
 const int MINCONTACTHOURS = 40;
 const int MAXCONTACTHOURS = 200;
 
-void invalidCourse(int courseId){
-    cout<<"The number of courses is not valid\n";
-    cout<<"The number of courses should be between 0<N<3001\n";
-    cout<<"You entered "<<courseId<<endl;
-    cout<<"GOODBYE :)";
+bool checkCourseId(int cId){
+    if (cId<=MAXCOURSEID&&cId>=MINCOURSEID){
+        return true;
+    }
+    else {
+        cout<<"The number of courses is not valid\n";
+        cout<<"The number of courses should be between 0<N<3001\n";
+        cout<<"You entered "<<cId<<endl;
+        return false;
+    }
+}
+
+bool checkContactHours(int cHrs){
+    if (cHrs<=MAXCONTACTHOURS&&cHrs>=MINCONTACTHOURS) return true;
+    else if (cHrs<=MAXCONTACTHOURS){
+        cout<<"Lowest number of contact hours allowed is "<<MINCONTACTHOURS<<endl;
+        cout<<"The number of contact hours you entered was "<<cHrs<<endl;
+        return false;
+    }
+    else{
+        cout<<"The program should have a maximum of "<<MAXCONTACTHOURS<<" contact hours\n";
+        cout<<"The number of contact hours you entered was " <<cHrs<<endl;
+        return false;
+    }
 }
 
 void showValues(int validity, int courseId, int contactHours, double tuitionRate, double totalTuition){
@@ -33,7 +52,16 @@ int main() {
     int contactHours = 0;
     cout<<"Enter the course number ";
     cin >> courseId;
+    if (!checkCourseId(courseId)){
+        cout<<"GOODBYE :)";
+        exit(EXIT_FAILURE);
+    }
+
     cout<<"Enter the number of contact hours\n";
     cin>>contactHours;
+    if(!checkContactHours(contactHours)){
+        cout<<"GOODBYE :)";
+        exit(EXIT_FAILURE);
+    }
 
 }
