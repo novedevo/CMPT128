@@ -17,4 +17,3 @@ char changeCase(char c){
 int main(){
     cout<<changeCase('g');
 }
-
