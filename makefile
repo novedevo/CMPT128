@@ -18,7 +18,7 @@ recursing-main: src/recursingmain.cpp
 factorial: src/factorial.cpp
 	$(CXX) src/factorial.cpp -o factorial
 	
-review-session1: src/review-session1.cpp
+review-session1: src/review-session1.cpp -std=gnu++11
 	$(CXX) src/review-session1.cpp -o review-session1
 
 system-of-particles: src/system-of-particles.cpp
