@@ -30,8 +30,11 @@
 *.exe
 *.out
 *.app
+
+#Juniles
 src/tempCodeRunnerFile.cpp
 src/.vscode/settings.json
 .vscode/tasks.json
 .vscode/launch.json
 .vscode/settings.json
+src/alexexample.cpp
