@@ -3,6 +3,9 @@ CXX = g++
 activity04: src/activity04.cpp
 	$(CXX) src/activity04.cpp -o activity04 -std=gnu++11
 
+activity05: src/activity05.cpp
+	$(CXX) src/activity05.cpp -o activity05 -std=gnu++14
+
 nibbler: src/nibbler.cpp
 	$(CXX) src/nibbler.cpp -o nibbler 
 
