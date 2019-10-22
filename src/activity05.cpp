@@ -43,7 +43,7 @@ public:
 
 };
 
-class Table{
+class Table {
 
 private:
     vector <Row> vectorOfRows;
@@ -51,17 +51,16 @@ private:
     double initialX = 0.0;
     double increment = 0.0;
 
-public:
-
     int promptUserForRows(){
         cout<<"Enter the number of rows in the table to be produced\n";
         cout<<"The number of rows must be between 0 and 35\n";
         cin>>rowCount;
         if (cin.fail() || 0>=rowCount || 35<=rowCount){
+            cin.clear();
+            cin.ignore();
             cout<<"The number you entered was invalid, TRY AGAIN:\n";
             promptUserForRows();
         }
-
 
     }
 
@@ -70,6 +69,8 @@ public:
         cout<<"The starting X must satisfy |X| < 100\n";
         cin>>initialX;
         if (cin.fail() || abs(initialX)>=100){
+            cin.clear();
+            cin.ignore();
             cout<<"The number you entered was too large, TRY AGAIN:\n";
             promptUserForInitialX();
 
@@ -82,13 +83,16 @@ public:
         cout<<"The increment in X must be positive\n";
         cin>>increment;
         if (cin.fail() || increment<0){
+            cin.clear();
+            cin.ignore();
             cout << "The number you entered was invalid, TRY AGAIN:\n";
             promptUserForIncrement();
         }
         else return 0;
     }
 
-    int promptUserForValues(){
+public:
+    int getValues(){
         promptUserForRows();
         promptUserForInitialX();
         promptUserForIncrement();
@@ -96,18 +100,14 @@ public:
     }
 
     void output(void){
-        
-        cout<<"        X          exp(X)         log10(X)        sqrt(X)\n";
-
+        cout<<"\n\n\n        X          exp(X)         log10(X)        sqrt(X)\n";
         for (size_t i=0; i<vectorOfRows.size(); i++){
         vectorOfRows[i].output();
         }
     }
 
-    Table(int rrr){
-        
-        promptUserForValues();
-
+    Table(){
+        getValues();
         for (unsigned int i=0; i<rowCount; i++){
             Row newRow(initialX+increment*i);
             vectorOfRows.push_back(newRow);
@@ -117,17 +117,7 @@ public:
 };
 
 int main(){
-    double xVal = 1.0;
-    double increment = 0.24;
-    int numRows = 4;
-    Table myTable(0);
+    Table myTable;
     myTable.output();
-
-    /*for (unsigned int i=0; i<numRows; i++){
-        Row newRow(xVal+increment*i);
-        //Table.push_back(newRow);
-        newRow.output();
-        //cout<<i<<endl<<"test";
-    }*/
     return 0;
 }
