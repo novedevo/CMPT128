@@ -130,7 +130,8 @@ class Table2{
     int divisor = 0;
     int divisorAttempts = 0;
 
-    vector<int>vectorOfNumbers;
+    vector<int>vectorOfMultiples;
+    vector<int>vectorOfOthers;
 
     int getDivisor(){
         
@@ -163,13 +164,19 @@ class Table2{
         cout<< "Enter the largest integer to consider as part of the sum: ";
         cin>>largeInt;
         getDivisor();
+
+        if (smallInt>largeInt){
+            cout<<"There are no integers larger than "<<smallInt<<" and smaller than "<<largeInt<<endl;
+            exit(EXIT_FAILURE);
+        }
     }
 
-    void makeVectorOfNumbers(){
+    void makeVectors(){
         for (int i = smallInt; i<=largeInt; i++){
             if (i%divisor ==0){
-                vectorOfNumbers.push_back(i);
+                vectorOfMultiples.push_back(i);
             }
+            else vectorOfOthers.push_back(i);
         }
     }
 
@@ -180,13 +187,50 @@ class Table2{
         }
         return sum;
     }
+    
+    void printSumDivisible(){
+        
+        if (vectorOfMultiples.size()){
+            cout<<"The sum of all integers between "<<smallInt<<" and "<<largeInt<<endl;
+            cout<<"that are divisible by "<<divisor<<" is "<<sumVector(vectorOfMultiples)<<endl<<endl<<endl;
+        }
+        else{
+            cout<<"no integers are exactly divisible by "<<divisor<<endl<<endl;
+        }
+    }
+
+    void printSumIndivisible(){
+        if (vectorOfOthers.size()){
+            cout<<"The sum of all integers between "<<smallInt<<" and "<<largeInt<<endl;
+            cout<<"that are not divisible by "<<divisor<<" is "<<sumVector(vectorOfOthers);
+        }
+        else{
+            cout<<"all integers are divisible by "<<divisor;
+        }
+    }
+
+    void printTable(){
+        if (vectorOfMultiples.size()){
+            cout<<"The numbers between "<<smallInt<<" and "<<largeInt<<endl;
+            cout<<"that are divisible by "<<divisor<<" are:";
+
+            cout<<left;
+            for(size_t i = 0; i<vectorOfMultiples.size(); i++){
+                if (i%5==0) cout<<endl;
+                cout<<setw(8)<<vectorOfMultiples[i];
+            }
+            cout<<endl<<endl;
+        }
+    }
 
     public:
 
     Table2(){
         getValues();
-        makeVectorOfNumbers();
-        cout<<sumVector(vectorOfNumbers);
+        makeVectors();
+        printTable();
+        printSumDivisible();
+        printSumIndivisible();
     }
 
 
@@ -197,5 +241,6 @@ int main(){
     myTable1.output();
     return 0;*/
     Table2 myTable2;
+    cout<<endl;
     //myTable2.getValues();
 }
