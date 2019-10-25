@@ -28,5 +28,5 @@ system-of-particles: src/system-of-particles.cpp
 	$(CXX) src/system-of-particles.cpp -o system-of-particles -std=gnu++11
 
 review-session-2: src/review-session-2.c
-	gcc src/review-session-2.c -o review-session-2
+	gcc src/review-session-2.c -lm -o review-session-2
 	
