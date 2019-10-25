@@ -1,1 +1,1 @@
-# CMPT128 [![Build Status](https://travis-ci.org/novedevo/CMPT128.svg?branch=master)](https://travis-ci.org/novedevo/CMPT128)
+# CMPT128 [![Build Status](https://travis-ci.org/novedevo/CMPT128.svg?branch=master)](https://travis-ci.org/novedevo/CMPT128) [![Coverage Status](https://coveralls.io/repos/github/novedevo/CMPT128/badge.svg?branch=master)](https://coveralls.io/github/novedevo/CMPT128?branch=master)
