@@ -8,7 +8,7 @@ default:
 
 clean:
 	@echo "removing exe files..."
-	rm -f debug/*
+	rm -f debug/*.exe
 
 all: activity04 activity05 nibbler circlemath codewrite recursing-main factorial review-session1 system-of-particles review-session-2 smoothness-calculator
 
