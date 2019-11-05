@@ -111,7 +111,88 @@ public:
     }
 };
 
-int main(){
+class Placeholder{
+private:
+    const int MAXROWS = 9;
+    const int MINROWS = 1;
+    int nRows = 0;
+    int attempts = 0;
+    bool ifAppend = false;
+public:
+
+    void getInput(){
+        if (attempts > 5){
+            cout<<"No Valid input\n";
+            exit(EXIT_FAILURE);
+        }
+        attempts++;
+        cout << "Enter the number of rows in the pyramid:\n"
+             << "the number of rows, n must be 9 >= n >= 1: ";
+        cin >> nRows;
+        checkForErrors();
+    }
+    void checkForErrors(){
+        if (cin.fail()){
+            cerr << "You did not enter an integer\n"
+                 << "So you did not enter valid number of rows\n"
+                 << "TRY AGAIN\n\n";
+            reloadCin();
+            getInput();
+        }
+        else if (!(nRows >= MINROWS && nRows <= MAXROWS)){
+            cerr<<"The value of the number of rows in the pyramid\n"
+                <<"that you entered is out of range.  TRY AGAIN\n\n";
+            
+            getInput();
+        }
+        
+    }
+    void reloadCin(){
+        cin.clear();
+        cin.sync();
+        cin.ignore();
+    }
+    
+    void main(){
+        ifAppend = false;
+        getInput();
+        PrintPattern(nRows, ifAppend);
+        nRows -= 2;
+        ifAppend = true;
+        if(nRows > 1) PrintPattern(nRows, ifAppend);
+
+    }
+
+    void PrintPattern(int rowsOfPattern, bool ifApp){
+        ofstream outFile;
+
+        if (ifApp){
+            outFile.open("myfile.txt", iostream::app);
+        }else{
+            outFile.open("myfile.txt");
+        }
+        if(outFile.fail()){
+            cerr << "\nIn function PrintPattern\n";
+            cerr << "Could not open output file\n\n";
+            exit(EXIT_FAILURE);
+        }
+        outFile<<right;
+        for (int i = 0; i<rowsOfPattern; i++){
+            ////cout<<rowsOfPattern;
+            int counter1 = 0;
+            int counter2 = 1;
+            for(int j = 0; j<5+2*i; j++){
+                counter2++;
+                counter1 += counter2;
+                outFile<<setw(5)<<counter1;
+            }
+            outFile<<endl;
+        }
+    }
+    
+};
+
+int section1(){
     cout << fixed << setprecision(3);   //formats correctly for constraints
 
     SensorDataFile inFile;     //instantiates a new object of type MyInputFileType
@@ -122,5 +203,12 @@ int main(){
     inFile.calculate();
     inFile.printValues();
 
+    return 0;
+}
+
+int main(){
+    ////section1();
+    Placeholder po;
+    po.main();
     return 0;
 }
