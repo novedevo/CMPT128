@@ -4,13 +4,14 @@ C = gcc
 .PHONY: default clean all
 
 default:
-	@echo "no options given, exiting..."
+	@echo no options given, exiting...
 
 clean:
 	@echo "removing exe files..."
 	rm -f debug/*.exe
 
-all: activity04 activity05 nibbler circlemath codewrite recursing-main factorial review-session1 system-of-particles review-session-2 smoothness-calculator
+all: activity04 activity05 nibbler circlemath codewrite factorial review-session1 system-of-particles review-session-2 smoothness-calculator
+	@echo all targets compiled
 
 #BEGIN LIST OF TARGETS
 
