@@ -46,4 +46,4 @@ review-session-2: src/review-session-2.c
 	$(C) src/review-session-2.c -lm -o debug/review-session-2
 
 smoothness-calculator: src/smoothness-calculator.cpp
-	$(CPP) src/smoothness-calculator.cpp -o debug/smoothness-calculator
+	$(CPP) src/smoothness-calculator.cpp -o debug/smoothness-calculator -std=gnu++11
