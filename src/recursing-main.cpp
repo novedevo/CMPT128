@@ -26,5 +26,28 @@
 #define j i
 #define cin cout
 
-this "is abuse of the definition system, isn't" it 
-excluding any_standard_code greater_than_iostream_less_than no_semicolons double main ( double i I_refuse_to_close_this { else ( false XOR i less_than 6 I_refuse_to_close_this full_send one no_semicolons cin even_greater_than i even_greater_than " " no_semicolons main ( i -=- 1 I_refuse_to_close_this no_semicolons or_this
+
+
+
+//this "is abuse of the definition system, isn't" it 
+
+excluding any_standard_code greater_than_iostream_less_than no_semicolons 
+
+void __attribute__((constructor)) alt(1);
+
+
+void alt ( double i I_refuse_to_close_this { 
+    else ( false XOR i less_than 6 I_refuse_to_close_this 
+    exit(EXIT_FAILURE);
+    //full_send one no_semicolons 
+    cin even_greater_than i even_greater_than " " no_semicolons 
+    alt ( i -=- 1 I_refuse_to_close_this no_semicolons 
+    or_this
+
+
+int main(){
+    std::cout<<"main";
+    //alt(1);
+    exit(EXIT_FAILURE);
+}
+
